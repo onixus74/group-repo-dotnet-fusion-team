@@ -1,11 +1,12 @@
-using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 using System.Data.Entity.ModelConfiguration;
+using YouBay.Domain.Entities;
 
 namespace YouBay.Data.Models.Mapping
 {
-    public class t_productMap : EntityTypeConfiguration<t_product>
+    public class ProductMap : EntityTypeConfiguration<Product>
     {
-        public t_productMap()
+        public ProductMap()
         {
             // Primary Key
             this.HasKey(t => t.productId);
@@ -38,8 +39,8 @@ namespace YouBay.Data.Models.Mapping
             this.Property(t => t.subcategory_subcategoryId).HasColumnName("subcategory_subcategoryId");
 
             // Relationships
-            this.HasMany(t => t.t_user1)
-                .WithMany(t => t.t_product1)
+            this.HasMany(t => t.buyers)
+                .WithMany(t => t.products)
                 .Map(m =>
                     {
                         m.ToTable("t_user_t_product", "fusiondb");
@@ -47,11 +48,11 @@ namespace YouBay.Data.Models.Mapping
                         m.MapRightKey("buyers_youBayUserId");
                     });
 
-            this.HasOptional(t => t.t_subcategory)
-                .WithMany(t => t.t_product)
+            this.HasOptional(t => t.subcategory)
+                .WithMany(t => t.products)
                 .HasForeignKey(d => d.subcategory_subcategoryId);
-            this.HasOptional(t => t.t_user)
-                .WithMany(t => t.t_product)
+            this.HasOptional(t => t.seller)
+                .WithMany(t => t.products)
                 .HasForeignKey(d => d.seller_youBayUserId);
 
         }

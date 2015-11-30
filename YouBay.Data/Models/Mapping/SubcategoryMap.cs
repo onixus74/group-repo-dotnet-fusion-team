@@ -1,11 +1,12 @@
-using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 using System.Data.Entity.ModelConfiguration;
+using YouBay.Domain.Entities;
 
 namespace YouBay.Data.Models.Mapping
 {
-    public class t_subcategoryMap : EntityTypeConfiguration<t_subcategory>
+    public class SubcategoryMap : EntityTypeConfiguration<Subcategory>
     {
-        public t_subcategoryMap()
+        public SubcategoryMap()
         {
             // Primary Key
             this.HasKey(t => t.subcategoryId);
@@ -31,8 +32,8 @@ namespace YouBay.Data.Models.Mapping
             this.Property(t => t.category_categoryId).HasColumnName("category_categoryId");
 
             // Relationships
-            this.HasOptional(t => t.t_category)
-                .WithMany(t => t.t_subcategory)
+            this.HasOptional(t => t.categorys)
+                .WithMany(t => t.subcategorys)
                 .HasForeignKey(d => d.category_categoryId);
 
         }

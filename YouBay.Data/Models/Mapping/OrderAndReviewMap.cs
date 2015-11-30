@@ -1,11 +1,13 @@
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
+using YouBay.Domain.Entities;
 
 namespace YouBay.Data.Models.Mapping
 {
-    public class t_orderandreviewMap : EntityTypeConfiguration<t_orderandreview>
+    public class OrderAndReviewMap : EntityTypeConfiguration<OrderAndReview>
     {
-        public t_orderandreviewMap()
+        public OrderAndReviewMap()
         {
             // Primary Key
             this.HasKey(t => new { t.buyerId, t.productId, t.theDate });
@@ -42,11 +44,11 @@ namespace YouBay.Data.Models.Mapping
             this.Property(t => t.reviewTitle).HasColumnName("reviewTitle");
 
             // Relationships
-            this.HasRequired(t => t.t_product)
-                .WithMany(t => t.t_orderandreview)
+            this.HasRequired(t => t.product)
+                .WithMany(t => t.orderandreviews)
                 .HasForeignKey(d => d.productId);
-            this.HasRequired(t => t.t_user)
-                .WithMany(t => t.t_orderandreview)
+            this.HasRequired(t => t.buyer)
+                .WithMany(t => t.orderandreviews)
                 .HasForeignKey(d => d.buyerId);
 
         }

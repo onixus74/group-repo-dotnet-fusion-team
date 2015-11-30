@@ -1,11 +1,12 @@
-using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 using System.Data.Entity.ModelConfiguration;
+using YouBay.Domain.Entities;
 
 namespace YouBay.Data.Models.Mapping
 {
-    public class t_assistantitemsMap : EntityTypeConfiguration<t_assistantitems>
+    public class AssistantitemsMap : EntityTypeConfiguration<AssistantItems>
     {
-        public t_assistantitemsMap()
+        public AssistantitemsMap()
         {
             // Primary Key
             this.HasKey(t => t.assistantItemsId);
@@ -36,12 +37,6 @@ namespace YouBay.Data.Models.Mapping
             this.Property(t => t.questionDisplayPriority).HasColumnName("questionDisplayPriority");
             this.Property(t => t.questionText).HasColumnName("questionText");
             this.Property(t => t.subcategory_subcategoryId).HasColumnName("subcategory_subcategoryId");
-
-            // Relationships
-            this.HasOptional(t => t.t_subcategory)
-                .WithMany(t => t.t_assistantitems)
-                .HasForeignKey(d => d.subcategory_subcategoryId);
-
         }
     }
 }

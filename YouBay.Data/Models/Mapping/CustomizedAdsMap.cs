@@ -1,11 +1,12 @@
-using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 using System.Data.Entity.ModelConfiguration;
+using YouBay.Domain.Entities;
 
 namespace YouBay.Data.Models.Mapping
 {
-    public class t_customizedadsMap : EntityTypeConfiguration<t_customizedads>
+    public class CustomizedAdsMap : EntityTypeConfiguration<CustomizedAds>
     {
-        public t_customizedadsMap()
+        public CustomizedAdsMap()
         {
             // Primary Key
             this.HasKey(t => t.customizedAdsId);
@@ -26,8 +27,8 @@ namespace YouBay.Data.Models.Mapping
             this.Property(t => t.product_productId).HasColumnName("product_productId");
 
             // Relationships
-            this.HasOptional(t => t.t_product)
-                .WithMany(t => t.t_customizedads)
+            this.HasOptional(t => t.product)
+                .WithMany(t => t.customizedadss)
                 .HasForeignKey(d => d.product_productId);
 
         }

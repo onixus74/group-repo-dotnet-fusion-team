@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 
-namespace YouBay.Data.Models
+namespace YouBay.Domain.Entities
 {
-    public partial class t_producthistory
+    public  class ProductHistory
     {
         public long productHistoryId { get; set; }
         public Nullable<System.DateTime> historyDate { get; set; }
@@ -15,6 +15,6 @@ namespace YouBay.Data.Models
         public Nullable<float> sellerPriceHistory { get; set; }
         public string subcategoryAdditionalValuesHistory { get; set; }
         public Nullable<long> product_productId { get; set; }
-        public virtual t_product t_product { get; set; }
+        public virtual Product products { get; set; }
     }
 }

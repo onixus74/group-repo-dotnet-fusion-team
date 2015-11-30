@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 
-namespace YouBay.Data.Models
+namespace YouBay.Domain.Entities
 {
-    public partial class t_orderandreview
+    public  class OrderAndReview
     {
         public long buyerId { get; set; }
         public long productId { get; set; }
@@ -17,7 +17,7 @@ namespace YouBay.Data.Models
         public Nullable<int> productRating { get; set; }
         public string reviewText { get; set; }
         public string reviewTitle { get; set; }
-        public virtual t_product t_product { get; set; }
-        public virtual t_user t_user { get; set; }
+        public virtual Product product { get; set; }
+        public virtual Buyer buyer { get; set; }
     }
 }

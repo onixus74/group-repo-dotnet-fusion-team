@@ -1,14 +1,14 @@
 using System;
 using System.Collections.Generic;
 
-namespace YouBay.Data.Models
+namespace YouBay.Domain.Entities
 {
-    public partial class t_subcategory
+    public  class Subcategory
     {
-        public t_subcategory()
+        public Subcategory()
         {
-            this.t_assistantitems = new List<t_assistantitems>();
-            this.t_product = new List<t_product>();
+            this.assistantitemss = new List<AssistantItems>();
+            this.products = new List<Product>();
         }
 
         public long subcategoryId { get; set; }
@@ -18,8 +18,8 @@ namespace YouBay.Data.Models
         public Nullable<bool> isActive { get; set; }
         public string subcategoryAttributesAndTypes { get; set; }
         public Nullable<long> category_categoryId { get; set; }
-        public virtual ICollection<t_assistantitems> t_assistantitems { get; set; }
-        public virtual t_category t_category { get; set; }
-        public virtual ICollection<t_product> t_product { get; set; }
+        public virtual ICollection<AssistantItems> assistantitemss { get; set; }
+        public virtual Category categorys { get; set; }
+        public virtual ICollection<Product> products { get; set; }
     }
 }

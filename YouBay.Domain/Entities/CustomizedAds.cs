@@ -1,13 +1,13 @@
 using System;
 using System.Collections.Generic;
 
-namespace YouBay.Data.Models
+namespace YouBay.Domain.Entities
 {
-    public partial class t_customizedads
+    public  class CustomizedAds
     {
-        public t_customizedads()
+        public CustomizedAds()
         {
-            this.t_user = new List<t_user>();
+            buyers = new List<Buyer>();
         }
 
         public long customizedAdsId { get; set; }
@@ -18,7 +18,7 @@ namespace YouBay.Data.Models
         public Nullable<bool> isAPurchasedAd { get; set; }
         public Nullable<System.DateTime> startDate { get; set; }
         public Nullable<long> product_productId { get; set; }
-        public virtual t_product t_product { get; set; }
-        public virtual ICollection<t_user> t_user { get; set; }
+        public virtual Product product { get; set; }
+        public virtual ICollection<Buyer> buyers { get; set; }
     }
 }

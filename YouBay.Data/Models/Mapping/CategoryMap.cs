@@ -1,11 +1,12 @@
-using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 using System.Data.Entity.ModelConfiguration;
+using YouBay.Domain.Entities;
 
 namespace YouBay.Data.Models.Mapping
 {
-    public class t_categoryMap : EntityTypeConfiguration<t_category>
+    public class CategoryMap : EntityTypeConfiguration<Category>
     {
-        public t_categoryMap()
+        public CategoryMap()
         {
             // Primary Key
             this.HasKey(t => t.categoryId);

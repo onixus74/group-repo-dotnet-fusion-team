@@ -1,11 +1,12 @@
-using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 using System.Data.Entity.ModelConfiguration;
+using YouBay.Domain.Entities;
 
 namespace YouBay.Data.Models.Mapping
 {
-    public class t_userMap : EntityTypeConfiguration<t_user>
+    public class YouBayUserMap : EntityTypeConfiguration<YouBayUser>
     {
-        public t_userMap()
+        public YouBayUserMap()
         {
             // Primary Key
             this.HasKey(t => t.youBayUserId);
@@ -33,6 +34,7 @@ namespace YouBay.Data.Models.Mapping
             this.Property(t => t.phoneNumber)
                 .HasMaxLength(100);
 
+            /*
             this.Property(t => t.sellerBadges)
                 .HasMaxLength(1000);
 
@@ -53,7 +55,7 @@ namespace YouBay.Data.Models.Mapping
 
             this.Property(t => t.buyerBadges)
                 .HasMaxLength(1000);
-
+            */
             // Table & Column Mappings
             this.ToTable("t_user", "fusiondb");
             this.Property(t => t.USER_TYPE).HasColumnName("USER_TYPE");
@@ -67,7 +69,9 @@ namespace YouBay.Data.Models.Mapping
             this.Property(t => t.isBanned).HasColumnName("isBanned");
             this.Property(t => t.lastName).HasColumnName("lastName");
             this.Property(t => t.phoneNumber).HasColumnName("phoneNumber");
-            this.Property(t => t.complaintPercentage).HasColumnName("complaintPercentage");
+         
+            /*child class attributes */
+            /* this.Property(t => t.complaintPercentage).HasColumnName("complaintPercentage");
             this.Property(t => t.gamificationScore).HasColumnName("gamificationScore");
             this.Property(t => t.sellerBadges).HasColumnName("sellerBadges");
             this.Property(t => t.sellerDescription).HasColumnName("sellerDescription");
@@ -87,11 +91,21 @@ namespace YouBay.Data.Models.Mapping
             this.Property(t => t.iSMale).HasColumnName("iSMale");
             this.Property(t => t.totalSpending).HasColumnName("totalSpending");
             this.Property(t => t.customizedAds_customizedAdsId).HasColumnName("customizedAds_customizedAdsId");
+            */
 
-            // Relationships
-            this.HasOptional(t => t.t_customizedads)
-                .WithMany(t => t.t_user)
-                .HasForeignKey(d => d.customizedAds_customizedAdsId);
+
+            Map<YouBayUser>(c =>
+            {
+                c.Requires("USER_TYPE").HasValue("Buyer");  
+            });
+            Map<Seller>(c =>
+            {
+                c.Requires("USER_TYPE").HasValue("Seller");
+            });
+            Map<Manager>(c =>
+            {
+                c.Requires("USER_TYPE").HasValue("Manager");
+            });
 
         }
     }

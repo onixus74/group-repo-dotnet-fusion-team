@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EE3EB61D-7340-43E3-B2B4-AD844C4A8AC8}</ProjectGuid>
+    <ProjectGuid>{F0B51169-C9CB-492A-92B1-8067AC732418}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>YouBay.Service</RootNamespace>
@@ -41,6 +41,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YouBay.Data\YouBay.Data.csproj">
+      <Project>{f7cda6dc-e018-4fa4-bcfa-9b75c943b0f7}</Project>
+      <Name>YouBay.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YouBay.Domain\YouBay.Domain.csproj">
+      <Project>{23ff9920-33fa-4ffe-9681-3b4c0d044438}</Project>
+      <Name>YouBay.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EBA5F60B-7737-4B6D-8997-B1184386B411}</ProjectGuid>
+    <ProjectGuid>{F7CDA6DC-E018-4FA4-BCFA-9B75C943B0F7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>YouBay.Data</RootNamespace>
@@ -61,7 +61,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\fusiondbContext.cs" />
+    <Compile Include="Models\Mapping\AssistantitemsMap.cs" />
+    <Compile Include="Models\Mapping\AuctionMap.cs" />
+    <Compile Include="Models\Mapping\CategoryMap.cs" />
+    <Compile Include="Models\Mapping\CustomizedAdsMap.cs" />
+    <Compile Include="Models\Mapping\HistoryOfViewsMap.cs" />
+    <Compile Include="Models\Mapping\OrderAndReviewMap.cs" />
+    <Compile Include="Models\Mapping\ProductHistoryMap.cs" />
+    <Compile Include="Models\Mapping\ProductMap.cs" />
+    <Compile Include="Models\Mapping\SpecialPromotionMap.cs" />
+    <Compile Include="Models\Mapping\SubcategoryMap.cs" />
+    <Compile Include="Models\Mapping\ManagerMap.cs" />
+    <Compile Include="Models\Mapping\BuyerMap.cs" />
+    <Compile Include="Models\Mapping\SellerMap.cs" />
+    <Compile Include="Models\Mapping\YouBayUserMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YouBay.Domain\YouBay.Domain.csproj">
+      <Project>{23ff9920-33fa-4ffe-9681-3b4c0d044438}</Project>
+      <Name>YouBay.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -1,11 +1,12 @@
-using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 using System.Data.Entity.ModelConfiguration;
+using YouBay.Domain.Entities;
 
 namespace YouBay.Data.Models.Mapping
 {
-    public class t_auctionMap : EntityTypeConfiguration<t_auction>
+    public class AuctionMap : EntityTypeConfiguration<Auction>
     {
-        public t_auctionMap()
+        public AuctionMap()
         {
             // Primary Key
             this.HasKey(t => t.auctionId);
@@ -21,11 +22,11 @@ namespace YouBay.Data.Models.Mapping
             this.Property(t => t.product_productId).HasColumnName("product_productId");
 
             // Relationships
-            this.HasOptional(t => t.t_product)
-                .WithMany(t => t.t_auction)
+            this.HasOptional(t => t.product)
+                .WithMany(t => t.auctions)
                 .HasForeignKey(d => d.product_productId);
-            this.HasOptional(t => t.t_user)
-                .WithMany(t => t.t_auction)
+            this.HasOptional(t => t.buyer)
+                .WithMany(t => t.auctions)
                 .HasForeignKey(d => d.buyer_youBayUserId);
 
         }

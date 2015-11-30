@@ -1,18 +1,18 @@
 using System;
 using System.Collections.Generic;
 
-namespace YouBay.Data.Models
+namespace YouBay.Domain.Entities
 {
-    public partial class t_category
+    public  class Category
     {
-        public t_category()
+        public Category()
         {
-            this.t_subcategory = new List<t_subcategory>();
+            this.subcategorys = new List<Subcategory>();
         }
 
         public long categoryId { get; set; }
         public Nullable<int> categoryDisplayPriority { get; set; }
         public string categoryName { get; set; }
-        public virtual ICollection<t_subcategory> t_subcategory { get; set; }
+        public virtual ICollection<Subcategory> subcategorys { get; set; }
     }
 }

@@ -1,11 +1,13 @@
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
+using YouBay.Domain.Entities;
 
 namespace YouBay.Data.Models.Mapping
 {
-    public class t_historyofviewsMap : EntityTypeConfiguration<t_historyofviews>
+    public class HistoryOfViewsMap : EntityTypeConfiguration<HistoryOfViews>
     {
-        public t_historyofviewsMap()
+        public HistoryOfViewsMap()
         {
             // Primary Key
             this.HasKey(t => new { t.buyerId, t.productId, t.theDate });
@@ -29,11 +31,11 @@ namespace YouBay.Data.Models.Mapping
             this.Property(t => t.comment).HasColumnName("comment");
 
             // Relationships
-            this.HasRequired(t => t.t_product)
-                .WithMany(t => t.t_historyofviews)
+            this.HasRequired(t => t.product)
+                .WithMany(t => t.historyofviewss)
                 .HasForeignKey(d => d.productId);
-            this.HasRequired(t => t.t_user)
-                .WithMany(t => t.t_historyofviews)
+            this.HasRequired(t => t.buyer)
+                .WithMany(t => t.historyofviewss)
                 .HasForeignKey(d => d.buyerId);
 
         }

@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 
-namespace YouBay.Data.Models
+namespace YouBay.Domain.Entities
 {
-    public partial class t_auction
+    public  class Auction
     {
         public long auctionId { get; set; }
         public Nullable<float> currentPrice { get; set; }
@@ -11,7 +11,7 @@ namespace YouBay.Data.Models
         public Nullable<System.DateTime> startTime { get; set; }
         public Nullable<long> buyer_youBayUserId { get; set; }
         public Nullable<long> product_productId { get; set; }
-        public virtual t_product t_product { get; set; }
-        public virtual t_user t_user { get; set; }
+        public virtual Product product { get; set; }
+        public virtual Buyer buyer { get; set; }
     }
 }

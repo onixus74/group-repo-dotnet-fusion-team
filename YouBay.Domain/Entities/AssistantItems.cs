@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 
-namespace YouBay.Data.Models
+namespace YouBay.Domain.Entities
 {
-    public partial class t_assistantitems
+    public  class AssistantItems
     {
         public long assistantItemsId { get; set; }
         public string affirmativeAnswer { get; set; }
@@ -13,6 +13,6 @@ namespace YouBay.Data.Models
         public Nullable<int> questionDisplayPriority { get; set; }
         public string questionText { get; set; }
         public Nullable<long> subcategory_subcategoryId { get; set; }
-        public virtual t_subcategory t_subcategory { get; set; }
+        public virtual Subcategory subcategory { get; set; }
     }
 }
