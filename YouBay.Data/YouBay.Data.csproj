@@ -84,8 +84,20 @@
     <Compile Include="Models\Mapping\SellerMap.cs" />
     <Compile Include="Models\Mapping\YouBayUserMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\AssistantItemsRepository.cs" />
+    <Compile Include="Repositories\AuctionRepository.cs" />
+    <Compile Include="Repositories\BuyerRepository.cs" />
+    <Compile Include="Repositories\CustomizedAdsRepository.cs" />
+    <Compile Include="Repositories\HistoryOfViewsRepository.cs" />
+    <Compile Include="Repositories\ManagerRepository.cs" />
+    <Compile Include="Repositories\OrderAndReviewRepository.cs" />
+    <Compile Include="Repositories\ProducthistoryRepository.cs" />
+    <Compile Include="Repositories\ProductRepository.cs" />
+    <Compile Include="Repositories\SellerRepository.cs" />
+    <Compile Include="Repositories\SpecialPromotionRepository.cs" />
     <Compile Include="Repositories\SubcategoryRepository.cs" />
     <Compile Include="Repositories\CategoryRepository.cs" />
+    <Compile Include="Repositories\YouBayUserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\YouBay.Domain\YouBay.Domain.csproj">
