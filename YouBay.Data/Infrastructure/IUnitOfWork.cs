@@ -1,9 +1,5 @@
-﻿using  Data.Repositories;
+﻿using Data.Repositories;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace YouBay.Data.Infrastructure
 {
@@ -11,6 +7,10 @@ namespace YouBay.Data.Infrastructure
     {
         void Commit();
 
+        /* ---------------------------------------------------------------------- */
         ICategoryRepository CategoryRepository { get; }
+        ISubcategoryRepository SubcategoryRepository { get; }
+        /* ---------------------------------------------------------------------- */
+
     }
 }

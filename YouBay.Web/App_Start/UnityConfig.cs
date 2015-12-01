@@ -41,8 +41,15 @@ namespace YouBay.Web.App_Start
             // TODO: Register your types here
             // container.RegisterType<IProductRepository, ProductRepository>();
 
+            /* ------------------------------------------------------------------------------------------------------ */
+
             container.RegisterType<ICategoryService, CategoryService>(new PerRequestLifetimeManager());
             container.RegisterType<ICategoryRepository, CategoryRepository>(new PerRequestLifetimeManager() );
+            container.RegisterType<ISubcategoryService, SubcategoryService>(new PerRequestLifetimeManager());
+            container.RegisterType<ISubcategoryRepository, SubcategoryRepository>(new PerRequestLifetimeManager());
+
+            /* ------------------------------------------------------------------------------------------------------ */
+
 
             container.RegisterType<IUnitOfWork, UnitOfWork>(new PerRequestLifetimeManager());
             container.RegisterType<IDatabaseFactory, DatabaseFactory>(new PerRequestLifetimeManager());

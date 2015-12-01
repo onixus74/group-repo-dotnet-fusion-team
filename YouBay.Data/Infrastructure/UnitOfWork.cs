@@ -10,6 +10,7 @@ namespace YouBay.Data.Infrastructure
 {
     public class UnitOfWork : IUnitOfWork
     {
+
         private fusiondbContext dataContext;
         protected fusiondbContext DataContext
         {
@@ -29,16 +30,28 @@ namespace YouBay.Data.Infrastructure
             DataContext.SaveChanges();
         }
 
+        public void Dispose()
+        {
+            DataContext.Dispose();
+        }
+
+        /* ---------------------------------------------------------------------- */
         private ICategoryRepository categoryRepository;
         public ICategoryRepository CategoryRepository
         {
             get { return categoryRepository = new CategoryRepository(dbFactory); ; }
         }
 
-        public void Dispose()
+
+        private ISubcategoryRepository subcategoryRepository;
+        public ISubcategoryRepository SubcategoryRepository
         {
-            DataContext.Dispose();
+            get { return subcategoryRepository = new SubcategoryRepository(dbFactory); ; }
         }
-        
+
+        /* ---------------------------------------------------------------------- */
+
+
+
     }
 }
