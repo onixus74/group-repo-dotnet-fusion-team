@@ -4,14 +4,14 @@ using YouBay.Domain.Entities;
 
 namespace Data.Repositories
 {
-    public class ProducthistoryRepository : RepositoryBase<Producthistory>, IProducthistoryRepository
+    public class ProductHistoryRepository : RepositoryBase<ProductHistory>, IProductHistoryRepository
     {
-        public ProducthistoryRepository(IDatabaseFactory dbFactory): base(dbFactory)
+        public ProductHistoryRepository(IDatabaseFactory dbFactory): base(dbFactory)
         {
 
         }
     }
-    public interface IProducthistoryRepository : IRepository<Producthistory>
+    public interface IProductHistoryRepository : IRepository<ProductHistory>
     {
 
     }

@@ -54,7 +54,7 @@ namespace YouBay.Service.Services
         public void UpdateOrderAndReview(OrderAndReview entity)
         {
 
-            OrderAndReview oldEntity= Get(c => c.orderAndReviewId == entity.orderAndReviewId);
+            OrderAndReview oldEntity= Get(c => (c.buyerId == entity.buyerId) && (c.productId == entity.productId) && (c.theDate == entity.theDate) );
 
             /*
                 Sabbegh & Latiri : On utilise les reflections pour parcourir TOUTES les propriétés d'un objet facilement

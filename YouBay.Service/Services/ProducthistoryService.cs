@@ -9,52 +9,52 @@ using YouBay.Domain.Entities;
 
 namespace YouBay.Service.Services
 {
-    public class ProducthistoryService : IProducthistoryService
+    public class ProductHistoryService : IProductHistoryService
     {
         static public DatabaseFactory dbFactory = new DatabaseFactory();
         UnitOfWork unitofwork = new UnitOfWork(dbFactory);
-        public void AddProducthistory(Producthistory producthistory)
+        public void AddProductHistory(ProductHistory ProductHistory)
         {
-            unitofwork.ProducthistoryRepository.Add(producthistory);
+            unitofwork.ProductHistoryRepository.Add(ProductHistory);
             unitofwork.Commit();
         }
 
-        public void Delete(Expression<Func<Producthistory, bool>> where)
+        public void Delete(Expression<Func<ProductHistory, bool>> where)
         {
-            unitofwork.ProducthistoryRepository.Delete(where);
+            unitofwork.ProductHistoryRepository.Delete(where);
             unitofwork.Commit();
         }
 
-        public void DeleteProducthistory(Producthistory id)
+        public void DeleteProductHistory(ProductHistory id)
         {
-            unitofwork.ProducthistoryRepository.Delete(id);
+            unitofwork.ProductHistoryRepository.Delete(id);
             unitofwork.Commit();
         }
 
-        public Producthistory Get(Expression<Func<Producthistory, bool>> where)
+        public ProductHistory Get(Expression<Func<ProductHistory, bool>> where)
         {
-            return unitofwork.ProducthistoryRepository.Get(where);
+            return unitofwork.ProductHistoryRepository.Get(where);
         }
 
-        public List<Producthistory> getAllCategories()
+        public List<ProductHistory> getAllCategories()
         {
-            return unitofwork.ProducthistoryRepository.GetAll().ToList();
+            return unitofwork.ProductHistoryRepository.GetAll().ToList();
         }
 
-        public Producthistory GetById(long id)
+        public ProductHistory GetById(long id)
         {
-            return unitofwork.ProducthistoryRepository.GetById(id);
+            return unitofwork.ProductHistoryRepository.GetById(id);
         }
 
-        public IEnumerable<Producthistory> GetMany(Expression<Func<Producthistory, bool>> where)
+        public IEnumerable<ProductHistory> GetMany(Expression<Func<ProductHistory, bool>> where)
         {
-            return unitofwork.ProducthistoryRepository.GetMany(where).ToList();
+            return unitofwork.ProductHistoryRepository.GetMany(where).ToList();
         }
 
-        public void UpdateProducthistory(Producthistory entity)
+        public void UpdateProductHistory(ProductHistory entity)
         {
 
-            Producthistory oldEntity= Get(c => c.producthistoryId == entity.producthistoryId);
+            ProductHistory oldEntity= Get(c => c.productHistoryId == entity.productHistoryId);
 
             /*
                 Sabbegh & Latiri : On utilise les reflections pour parcourir TOUTES les propriétés d'un objet facilement
@@ -75,16 +75,16 @@ namespace YouBay.Service.Services
         }
     }
 
-    public interface IProducthistoryService
+    public interface IProductHistoryService
     {
-        void AddProducthistory(Producthistory producthistory);
-        List<Producthistory> getAllCategories();
-        void UpdateProducthistory(Producthistory entity);
-        void DeleteProducthistory(Producthistory id);
-        Producthistory GetById(long id);
-        void Delete(Expression<Func<Producthistory, bool>> where);
-        Producthistory Get(Expression<Func<Producthistory, bool>> where);
-        IEnumerable<Producthistory> GetMany(Expression<Func<Producthistory, bool>> where);
+        void AddProductHistory(ProductHistory ProductHistory);
+        List<ProductHistory> getAllCategories();
+        void UpdateProductHistory(ProductHistory entity);
+        void DeleteProductHistory(ProductHistory id);
+        ProductHistory GetById(long id);
+        void Delete(Expression<Func<ProductHistory, bool>> where);
+        ProductHistory Get(Expression<Func<ProductHistory, bool>> where);
+        IEnumerable<ProductHistory> GetMany(Expression<Func<ProductHistory, bool>> where);
     }
 
 }

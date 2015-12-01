@@ -91,7 +91,7 @@
     <Compile Include="Repositories\HistoryOfViewsRepository.cs" />
     <Compile Include="Repositories\ManagerRepository.cs" />
     <Compile Include="Repositories\OrderAndReviewRepository.cs" />
-    <Compile Include="Repositories\ProducthistoryRepository.cs" />
+    <Compile Include="Repositories\ProductHistoryRepository.cs" />
     <Compile Include="Repositories\ProductRepository.cs" />
     <Compile Include="Repositories\SellerRepository.cs" />
     <Compile Include="Repositories\SpecialPromotionRepository.cs" />

@@ -8,24 +8,24 @@ namespace YouBay.Web.Controllers
     public class ProducthistoryController : Controller
     {
 
-        IProducthistoryService iProducthistoryService;
-        public ProducthistoryController(IProducthistoryService iProducthistoryService)
+        IProductHistoryService iProductHistoryService;
+        public ProducthistoryController(IProductHistoryService iProductHistoryService)
         {
-            this.iProducthistoryService = iProducthistoryService;
+            this.iProductHistoryService = iProductHistoryService;
         }
 
 
         // GET: Producthistory
         public ActionResult Index()
         {
-            var categories = iProducthistoryService.getAllCategories();
+            var categories = iProductHistoryService.getAllCategories();
             return View(categories);
         }
 
         // GET: Producthistory/Details/5
         public ActionResult Details(long id)
         {
-            var Producthistory = iProducthistoryService.Get(c => c.ProducthistoryId == id);
+            var Producthistory = iProductHistoryService.Get(c => c.productHistoryId == id);
             return View(Producthistory);
         }
 
@@ -37,14 +37,14 @@ namespace YouBay.Web.Controllers
 
         // POST: Producthistory/Create
         [HttpPost]
-        public ActionResult Create(Producthistory Producthistory)
+        public ActionResult Create(ProductHistory productHistory)
         {
             try
             {
                 
                 if (ModelState.IsValid)
                 {
-                    iProducthistoryService.AddProducthistory(Producthistory);
+                    iProductHistoryService.AddProductHistory(productHistory);
                     return RedirectToAction("Index");
                 }
 
@@ -63,20 +63,20 @@ namespace YouBay.Web.Controllers
         // GET: Producthistory/Edit/5
         public ActionResult Edit(long id)
         {
-            Producthistory Producthistory = iProducthistoryService.Get(c => c.ProducthistoryId == id);
-            return View(Producthistory);
+            ProductHistory ProductHistory = iProductHistoryService.Get(c => c.productHistoryId == id);
+            return View(ProductHistory);
         }
 
         // POST: Producthistory/Edit/5
         [HttpPost]
-        public ActionResult Edit(Producthistory Producthistory)
+        public ActionResult Edit(ProductHistory ProductHistory)
         {
             try
             {
 
                 if (ModelState.IsValid)
                 {
-                    iProducthistoryService.UpdateProducthistory(Producthistory);
+                    iProductHistoryService.UpdateProductHistory(ProductHistory);
                     return RedirectToAction("Index");
                 }
 
@@ -101,7 +101,7 @@ namespace YouBay.Web.Controllers
         {
             try
             {
-                iProducthistoryService.Delete(c => c.ProducthistoryId == id);
+                iProductHistoryService.Delete(c => c.productHistoryId == id);
                 return RedirectToAction("Index");
             }
             catch
