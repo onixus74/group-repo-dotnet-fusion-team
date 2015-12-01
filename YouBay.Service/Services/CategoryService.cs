@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using YouBay.Data.Infrastructure;
 using YouBay.Domain.Entities;
 
@@ -61,6 +59,7 @@ namespace YouBay.Service.Services
                 Sabbegh & Latiri : On utilise les reflections pour parcourir TOUTES les propriétés d'un objet facilement
                 On ne s'intéresse qu'au propriété non virtuelle =)
             */
+
             Type type = oldEntity.GetType();
             PropertyInfo[] properties = type.GetProperties();
             foreach (PropertyInfo property in properties)
