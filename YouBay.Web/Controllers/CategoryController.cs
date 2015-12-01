@@ -79,10 +79,6 @@ namespace YouBay.Web.Controllers
 
                 if (ModelState.IsValid)
                 {
-                    // Category oldCategory = iCategoryService.Get(c => c.categoryId == category.categoryId);
-                    // oldCategory = category;
-                    // iCategoryService.UpdateCategory(oldCategory);
-
                     iCategoryService.UpdateCategory(category);
                     return RedirectToAction("Index");
                 }

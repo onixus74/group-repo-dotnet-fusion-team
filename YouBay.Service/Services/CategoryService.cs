@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using YouBay.Data.Infrastructure;
 using YouBay.Domain.Entities;
 
@@ -13,43 +11,43 @@ namespace YouBay.Service.Services
     public class CategoryService : ICategoryService
     {
         static public DatabaseFactory dbFactory = new DatabaseFactory();
-        UnitOfWork utwk = new UnitOfWork(dbFactory);
+        UnitOfWork unitofwork = new UnitOfWork(dbFactory);
         public void AddCategory(Category category)
         {
-            utwk.CategoryRepository.Add(category);
-            utwk.Commit();
+            unitofwork.CategoryRepository.Add(category);
+            unitofwork.Commit();
         }
 
         public void Delete(Expression<Func<Category, bool>> where)
         {
-            utwk.CategoryRepository.Delete(where);
-            utwk.Commit();
+            unitofwork.CategoryRepository.Delete(where);
+            unitofwork.Commit();
         }
 
         public void DeleteCategory(Category id)
         {
-            utwk.CategoryRepository.Delete(id);
-            utwk.Commit();
+            unitofwork.CategoryRepository.Delete(id);
+            unitofwork.Commit();
         }
 
         public Category Get(Expression<Func<Category, bool>> where)
         {
-            return utwk.CategoryRepository.Get(where);
+            return unitofwork.CategoryRepository.Get(where);
         }
 
         public List<Category> getAllCategories()
         {
-            return utwk.CategoryRepository.GetAll().ToList();
+            return unitofwork.CategoryRepository.GetAll().ToList();
         }
 
         public Category GetById(long id)
         {
-            return utwk.CategoryRepository.GetById(id);
+            return unitofwork.CategoryRepository.GetById(id);
         }
 
         public IEnumerable<Category> GetMany(Expression<Func<Category, bool>> where)
         {
-            return utwk.CategoryRepository.GetMany(where).ToList();
+            return unitofwork.CategoryRepository.GetMany(where).ToList();
         }
 
         public void UpdateCategory(Category entity)
@@ -61,6 +59,7 @@ namespace YouBay.Service.Services
                 Sabbegh & Latiri : On utilise les reflections pour parcourir TOUTES les propriétés d'un objet facilement
                 On ne s'intéresse qu'au propriété non virtuelle =)
             */
+
             Type type = oldEntity.GetType();
             PropertyInfo[] properties = type.GetProperties();
             foreach (PropertyInfo property in properties)
@@ -71,7 +70,7 @@ namespace YouBay.Service.Services
                 }
             }
 
-            utwk.Commit();
+            unitofwork.Commit();
         }
     }
 
