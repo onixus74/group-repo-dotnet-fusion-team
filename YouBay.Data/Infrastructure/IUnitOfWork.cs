@@ -20,11 +20,11 @@ namespace YouBay.Data.Infrastructure
 
         IHistoryOfViewsRepository HistoryOfViewsRepository { get; }
 
-        IManagerRepository ManagerRepositoryy { get; }
+        IManagerRepository ManagerRepository { get; }
 
         IOrderAndReviewRepository OrderAndReviewRepository { get; }
 
-        IProducthistoryRepository ProducthistoryRepository { get; }
+        IProductHistoryRepository ProductHistoryRepository { get; }
 
         IProductRepository ProductRepository { get; }
 

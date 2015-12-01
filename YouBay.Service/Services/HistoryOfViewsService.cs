@@ -54,7 +54,7 @@ namespace YouBay.Service.Services
         public void UpdateHistoryOfViews(HistoryOfViews entity)
         {
 
-            HistoryOfViews oldEntity= Get(c => c.historyOfViewsId == entity.historyOfViewsId);
+            HistoryOfViews oldEntity= Get(c => (c.buyerId == entity.buyerId) && (c.productId == entity.productId) && (c.theDate == entity.theDate));
 
             /*
                 Sabbegh & Latiri : On utilise les reflections pour parcourir TOUTES les propriétés d'un objet facilement

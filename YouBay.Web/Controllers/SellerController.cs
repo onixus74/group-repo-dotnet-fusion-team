@@ -25,7 +25,7 @@ namespace YouBay.Web.Controllers
         // GET: Seller/Details/5
         public ActionResult Details(long id)
         {
-            var seller = iSellerService.Get(c => c.sellerId == id);
+            var seller = iSellerService.Get(c => c.youBayUserId == id);
             return View(seller);
         }
 
@@ -63,7 +63,7 @@ namespace YouBay.Web.Controllers
         // GET: Seller/Edit/5
         public ActionResult Edit(long id)
         {
-            Seller seller = iSellerService.Get(c => c.sellerId == id);
+            Seller seller = iSellerService.Get(c => c.youBayUserId== id);
             return View(seller);
         }
 
@@ -101,7 +101,7 @@ namespace YouBay.Web.Controllers
         {
             try
             {
-                iSellerService.Delete(c => c.sellerId == id);
+                iSellerService.Delete(c => c.youBayUserId == id);
                 return RedirectToAction("Index");
             }
             catch

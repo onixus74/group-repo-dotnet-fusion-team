@@ -99,10 +99,10 @@ namespace YouBay.Data.Infrastructure
         }
 
 
-        private IProducthistoryRepository producthistoryRepository;
-        public IProducthistoryRepository ProducthistoryRepository
+        private IProductHistoryRepository productHistoryRepository;
+        public IProductHistoryRepository ProductHistoryRepository
         {
-            get { return producthistoryRepository = new ProducthistoryRepository(dbFactory); ; }
+            get { return productHistoryRepository = new ProductHistoryRepository(dbFactory); ; }
         }
 
         private IProductRepository productRepository;

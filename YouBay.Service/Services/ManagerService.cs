@@ -54,7 +54,7 @@ namespace YouBay.Service.Services
         public void UpdateManager(Manager entity)
         {
 
-            Manager oldEntity= Get(c => c.managerId == entity.managerId);
+            Manager oldEntity= Get(c => c.youBayUserId == entity.youBayUserId);
 
             /*
                 Sabbegh & Latiri : On utilise les reflections pour parcourir TOUTES les propriétés d'un objet facilement

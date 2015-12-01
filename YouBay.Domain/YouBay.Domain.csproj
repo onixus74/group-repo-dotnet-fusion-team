@@ -58,7 +58,7 @@
     <Compile Include="Entities\Manager.cs" />
     <Compile Include="Entities\OrderAndReview.cs" />
     <Compile Include="Entities\Product.cs" />
-    <Compile Include="Entities\Producthistory.cs" />
+    <Compile Include="Entities\ProductHistory.cs" />
     <Compile Include="Entities\Seller.cs" />
     <Compile Include="Entities\SpecialPromotion.cs" />
     <Compile Include="Entities\Subcategory.cs" />

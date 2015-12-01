@@ -25,7 +25,7 @@ namespace YouBay.Web.Controllers
         // GET: Manager/Details/5
         public ActionResult Details(long id)
         {
-            var manager = iManagerService.Get(c => c.managerId == id);
+            var manager = iManagerService.Get(c => c.youBayUserId== id);
             return View(manager);
         }
 
@@ -63,7 +63,7 @@ namespace YouBay.Web.Controllers
         // GET: Manager/Edit/5
         public ActionResult Edit(long id)
         {
-            Manager manager = iManagerService.Get(c => c.managerId == id);
+            Manager manager = iManagerService.Get(c => c.youBayUserId == id);
             return View(manager);
         }
 
@@ -101,7 +101,7 @@ namespace YouBay.Web.Controllers
         {
             try
             {
-                iManagerService.Delete(c => c.managerId == id);
+                iManagerService.Delete(c => c.youBayUserId== id);
                 return RedirectToAction("Index");
             }
             catch

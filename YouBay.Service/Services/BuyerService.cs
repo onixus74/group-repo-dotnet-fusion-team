@@ -54,7 +54,7 @@ namespace YouBay.Service.Services
         public void UpdateBuyer(Buyer entity)
         {
 
-            Buyer oldEntity= Get(c => c.buyerId == entity.buyerId);
+            Buyer oldEntity= Get(c => c.youBayUserId == entity.youBayUserId);
 
             /*
                 Sabbegh & Latiri : On utilise les reflections pour parcourir TOUTES les propriétés d'un objet facilement

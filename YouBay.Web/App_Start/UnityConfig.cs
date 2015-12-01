@@ -59,8 +59,8 @@ namespace YouBay.Web.App_Start
             container.RegisterType<IBuyerRepository, BuyerRepository>(new PerRequestLifetimeManager());
 
 
-            container.RegisterType<ICustomizedService, CustomizedService>(new PerRequestLifetimeManager());
-            container.RegisterType<ICustomizedRepository, CustomizedRepository>(new PerRequestLifetimeManager());
+            container.RegisterType<ICustomizedAdsService, CustomizedAdsService>(new PerRequestLifetimeManager());
+            container.RegisterType<ICustomizedAdsRepository, CustomizedAdsRepository>(new PerRequestLifetimeManager());
 
 
 
@@ -76,8 +76,8 @@ namespace YouBay.Web.App_Start
             container.RegisterType<IOrderAndReviewRepository, OrderAndReviewRepository>(new PerRequestLifetimeManager());
 
 
-            container.RegisterType<IProducthistoryService, ProducthistoryService>(new PerRequestLifetimeManager());
-            container.RegisterType<IProducthistoryRepository, ProducthistoryRepository>(new PerRequestLifetimeManager());
+            container.RegisterType<IProductHistoryService, ProductHistoryService>(new PerRequestLifetimeManager());
+            container.RegisterType<IProductHistoryRepository, ProductHistoryRepository>(new PerRequestLifetimeManager());
 
 
             container.RegisterType<IProductService, ProductService>(new PerRequestLifetimeManager());
