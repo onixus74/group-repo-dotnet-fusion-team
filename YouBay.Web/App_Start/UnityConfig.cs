@@ -47,7 +47,54 @@ namespace YouBay.Web.App_Start
             container.RegisterType<ICategoryRepository, CategoryRepository>(new PerRequestLifetimeManager() );
             container.RegisterType<ISubcategoryService, SubcategoryService>(new PerRequestLifetimeManager());
             container.RegisterType<ISubcategoryRepository, SubcategoryRepository>(new PerRequestLifetimeManager());
+            container.RegisterType<IAssistantItemsService, AssistantItemsService>(new PerRequestLifetimeManager());
+            container.RegisterType<IAssistantItemsRepository, AssistantItemsRepository>(new PerRequestLifetimeManager());
 
+
+            container.RegisterType<IAuctionService, AuctionService>(new PerRequestLifetimeManager());
+            container.RegisterType<IAuctionRepository, AuctionRepository>(new PerRequestLifetimeManager());
+
+
+            container.RegisterType<IBuyerService, BuyerService>(new PerRequestLifetimeManager());
+            container.RegisterType<IBuyerRepository, BuyerRepository>(new PerRequestLifetimeManager());
+
+
+            container.RegisterType<ICustomizedService, CustomizedService>(new PerRequestLifetimeManager());
+            container.RegisterType<ICustomizedRepository, CustomizedRepository>(new PerRequestLifetimeManager());
+
+
+
+            container.RegisterType<IHistoryOfViewsService, HistoryOfViewsService>(new PerRequestLifetimeManager());
+            container.RegisterType<IHistoryOfViewsRepository, HistoryOfViewsRepository>(new PerRequestLifetimeManager());
+
+
+            container.RegisterType<IManagerService, ManagerService>(new PerRequestLifetimeManager());
+            container.RegisterType<IManagerRepository, ManagerRepository>(new PerRequestLifetimeManager());
+
+
+            container.RegisterType<IOrderAndReviewService, OrderAndReviewService>(new PerRequestLifetimeManager());
+            container.RegisterType<IOrderAndReviewRepository, OrderAndReviewRepository>(new PerRequestLifetimeManager());
+
+
+            container.RegisterType<IProducthistoryService, ProducthistoryService>(new PerRequestLifetimeManager());
+            container.RegisterType<IProducthistoryRepository, ProducthistoryRepository>(new PerRequestLifetimeManager());
+
+
+            container.RegisterType<IProductService, ProductService>(new PerRequestLifetimeManager());
+            container.RegisterType<IProductRepository, ProductRepository>(new PerRequestLifetimeManager());
+
+
+            container.RegisterType<ISellerService, SellerService>(new PerRequestLifetimeManager());
+            container.RegisterType<ISellerRepository, SellerRepository>(new PerRequestLifetimeManager());
+
+
+            container.RegisterType<ISpecialPromotionService, SpecialPromotionService>(new PerRequestLifetimeManager());
+            container.RegisterType<ISpecialPromotionRepository, SpecialPromotionRepository>(new PerRequestLifetimeManager());
+
+
+
+            container.RegisterType<IYouBayUserService, YouBayUserService>(new PerRequestLifetimeManager());
+            container.RegisterType<IYouBayUserRepository, YouBayUserRepository>(new PerRequestLifetimeManager());
             /* ------------------------------------------------------------------------------------------------------ */
 
 

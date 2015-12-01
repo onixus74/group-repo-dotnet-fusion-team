@@ -41,8 +41,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AssistantItemsService.cs" />
+    <Compile Include="Services\AuctionService.cs" />
+    <Compile Include="Services\BuyerService.cs" />
+    <Compile Include="Services\CustomizedAdsService.cs" />
+    <Compile Include="Services\HistoryOfViewsService.cs" />
+    <Compile Include="Services\ManagerService.cs" />
+    <Compile Include="Services\OrderAndReviewService.cs" />
+    <Compile Include="Services\ProducthistoryService.cs" />
+    <Compile Include="Services\ProductService.cs" />
+    <Compile Include="Services\SellerService.cs" />
+    <Compile Include="Services\SpecialPromotionService.cs" />
     <Compile Include="Services\SubcategoryService.cs" />
     <Compile Include="Services\CategoryService.cs" />
+    <Compile Include="Services\YouBayUserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\YouBay.Data\YouBay.Data.csproj">
