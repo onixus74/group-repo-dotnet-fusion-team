@@ -2,6 +2,8 @@ using System.ComponentModel.DataAnnotations;
 using System.Data.Entity.ModelConfiguration;
 using YouBay.Domain.Entities;
 
+// Magic - do not touch - Sabbegh & Latiri
+
 namespace YouBay.Data.Models.Mapping
 {
     public class YouBayUserMap : EntityTypeConfiguration<YouBayUser>
@@ -12,9 +14,12 @@ namespace YouBay.Data.Models.Mapping
             this.HasKey(t => t.youBayUserId);
 
             // Properties
+            /*
+            // Discriminator should not be used as a property =')
             this.Property(t => t.USER_TYPE)
                 .IsRequired()
                 .HasMaxLength(31);
+                */
 
             this.Property(t => t.countryOfResidence)
                 .HasMaxLength(100);
@@ -58,7 +63,9 @@ namespace YouBay.Data.Models.Mapping
             */
             // Table & Column Mappings
             this.ToTable("t_user", "fusiondb");
-            this.Property(t => t.USER_TYPE).HasColumnName("USER_TYPE");
+            /* 
+            // Discriminator should not be used as a property =')
+            this.Property(t => t.USER_TYPE).HasColumnName("USER_TYPE"); */
             this.Property(t => t.youBayUserId).HasColumnName("youBayUserId");
             this.Property(t => t.birthday).HasColumnName("birthday");
             this.Property(t => t.countryOfResidence).HasColumnName("countryOfResidence");
@@ -94,7 +101,7 @@ namespace YouBay.Data.Models.Mapping
             */
 
 
-            Map<YouBayUser>(c =>
+            Map<Buyer>(c =>
             {
                 c.Requires("USER_TYPE").HasValue("Buyer");  
             });

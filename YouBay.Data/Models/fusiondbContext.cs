@@ -29,6 +29,8 @@ namespace YouBay.Data.Models
         public DbSet<Subcategory> t_subcategory { get; set; }
         public DbSet<YouBayUser> t_user { get; set; }
 
+        
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new AssistantitemsMap());
