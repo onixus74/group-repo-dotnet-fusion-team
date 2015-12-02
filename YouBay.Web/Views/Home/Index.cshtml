@@ -2,30 +2,436 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<div role="main" class="main">
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    <div class="slider-container rev_slider_wrapper">
+        <div id="revolutionSlider" class="slider rev_slider" data-plugin-revolution-slider data-plugin-options='{"gridwidth": 1170, "gridheight": 500}'>
+            <ul>
+                <li data-transition="fade">
+                    <img src="~/Content/porto/img/custom-header-bg.jpg"
+                         alt=""
+                         data-bgposition="center center"
+                         data-bgfit="cover"
+                         data-bgrepeat="no-repeat"
+                         class="rev-slidebg">
+
+                    <div class="tp-caption"
+                         data-x="212"
+                         data-y="180"
+                         data-start="1000"
+                         data-transform_in="x:[-300%];opacity:0;s:500;"><img src="~/Content/porto/img/slides/slide-title-border.png" alt=""></div>
+
+                    <div class="tp-caption top-label"
+                         data-x="262"
+                         data-y="180"
+                         data-start="500"
+                         data-transform_in="y:[-300%];opacity:0;s:500;">DO YOU NEED A NEW</div>
+
+                    <div class="tp-caption"
+                         data-x="512"
+                         data-y="180"
+                         data-start="1000"
+                         data-transform_in="x:[300%];opacity:0;s:500;"><img src="~/Content/porto/img/slides/slide-title-border.png" alt=""></div>
+
+                    <div class="tp-caption main-label"
+                         data-x="170"
+                         data-y="210"
+                         data-start="1500"
+                         data-whitespace="nowrap"
+                         data-transform_in="y:[100%];s:500;"
+                         data-transform_out="opacity:0;s:500;"
+                         data-mask_in="x:0px;y:0px;">WEB DESIGN?</div>
+
+                    <div class="tp-caption bottom-label"
+                         data-x="220"
+                         data-y="280"
+                         data-start="2000"
+                         data-transform_in="y:[100%];opacity:0;s:500;">Check out our options and features.</div>
+
+                    <div class="tp-caption"
+                         data-x="right" data-hoffset="0"
+                         data-y="bottom" data-voffset="0"
+                         data-start="1800"
+                         data-transform_in="x:50;y:150;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.5;scaleY:0.5;skewX:0;skewY:0;opacity:0;transformPerspective:0;transformOrigin:50% 50%;s:500;"><img src="img/slides/mobile-device.png" alt=""></div>
+                </li>
+                <li data-transition="fade">
+                    <img src="~/Content/porto/img/custom-header-bg.jpg"
+                         alt=""
+                         data-bgposition="center center"
+                         data-bgfit="cover"
+                         data-bgrepeat="no-repeat"
+                         class="rev-slidebg">
+
+                    <div class="tp-caption"
+                         data-x="center"
+                         data-y="center"
+                         data-start="500"
+                         data-transform_in="opacity:0;s:500;">
+                        <iframe frameborder='no' src='http://player.vimeo.com/video/67957799?title=0&byline=0&portrait=0;api=1' width='640' height='360' style='width:640px;height:360px;'></iframe>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+
+    <div class="home-intro" id="home-intro">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-8">
+                    <p>
+                        The fastest way to grow your business with the leader in <em>Technology</em>
+                        <span>Check out our options and features included.</span>
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <div class="get-started">
+                        <a href="#" class="btn btn-lg btn-primary">Get Started Now!</a>
+                        <div class="learn-more">or <a href="index.html">learn more.</a></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+
+    <div role="main" class="main shop">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <hr class="tall">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h1 class="mb-none"><strong>Shop</strong></h1>
+                    <p>Showing 1–12 of 25 results.</p>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <ul class="products product-thumb-info-list" data-plugin-masonry>
+                    <li class="col-md-3 col-sm-6 col-xs-12 product">
+                        <a href="shop-product-sidebar.html">
+                            <span class="onsale">Sale!</span>
+                        </a>
+                        <span class="product-thumb-info">
+                            <a href="shop-cart.html" class="add-to-cart-product">
+                                <span><i class="fa fa-shopping-cart"></i> Add to Cart</span>
+                            </a>
+                            <a href="shop-product-sidebar.html">
+                                <span class="product-thumb-info-image">
+                                    <span class="product-thumb-info-act">
+                                        <span class="product-thumb-info-act-left"><em>View</em></span>
+                                        <span class="product-thumb-info-act-right"><em><i class="fa fa-plus"></i> Details</em></span>
+                                    </span>
+                                    <img alt="" class="img-responsive" src="~/Content/porto/img/products/product-1.jpg">
+                                </span>
+                            </a>
+                            <span class="product-thumb-info-content">
+                                <a href="shop-product-sidebar.html">
+                                    <h4>Photo Camera</h4>
+                                    <span class="price">
+                                        <del><span class="amount">$325</span></del>
+                                        <ins><span class="amount">$299</span></ins>
+                                    </span>
+                                </a>
+                            </span>
+                        </span>
+                    </li>
+                    <li class="col-md-3 col-sm-6 col-xs-12 product">
+                        <span class="product-thumb-info">
+                            <a href="shop-cart.html" class="add-to-cart-product">
+                                <span><i class="fa fa-shopping-cart"></i> Add to Cart</span>
+                            </a>
+                            <a href="shop-product-sidebar.html">
+                                <span class="product-thumb-info-image">
+                                    <span class="product-thumb-info-act">
+                                        <span class="product-thumb-info-act-left"><em>View</em></span>
+                                        <span class="product-thumb-info-act-right"><em><i class="fa fa-plus"></i> Details</em></span>
+                                    </span>
+                                    <img alt="" class="img-responsive" src="~/Content/porto/img/products/product-2.jpg">
+                                </span>
+                            </a>
+                            <span class="product-thumb-info-content">
+                                <a href="shop-product-sidebar.html">
+                                    <h4>Golf Bag</h4>
+                                    <span class="price">
+                                        <span class="amount">$72</span>
+                                    </span>
+                                </a>
+                            </span>
+                        </span>
+                    </li>
+                    <li class="col-md-3 col-sm-6 col-xs-12 product">
+                        <span class="product-thumb-info">
+                            <a href="shop-cart.html" class="add-to-cart-product">
+                                <span><i class="fa fa-shopping-cart"></i> Add to Cart</span>
+                            </a>
+                            <a href="shop-product-sidebar.html">
+                                <span class="product-thumb-info-image">
+                                    <span class="product-thumb-info-act">
+                                        <span class="product-thumb-info-act-left"><em>View</em></span>
+                                        <span class="product-thumb-info-act-right"><em><i class="fa fa-plus"></i> Details</em></span>
+                                    </span>
+                                    <img alt="" class="img-responsive" src="~/Content/porto/img/products/product-3.jpg">
+                                </span>
+                            </a>
+                            <span class="product-thumb-info-content">
+                                <a href="shop-product-sidebar.html">
+                                    <h4>Workout</h4>
+                                    <span class="price">
+                                        <span class="amount">$60</span>
+                                    </span>
+                                </a>
+                            </span>
+                        </span>
+                    </li>
+                    <li class="col-md-3 col-sm-6 col-xs-12 product">
+                        <span class="product-thumb-info">
+                            <a href="shop-cart.html" class="add-to-cart-product">
+                                <span><i class="fa fa-shopping-cart"></i> Add to Cart</span>
+                            </a>
+                            <a href="shop-product-sidebar.html">
+                                <span class="product-thumb-info-image">
+                                    <span class="product-thumb-info-act">
+                                        <span class="product-thumb-info-act-left"><em>View</em></span>
+                                        <span class="product-thumb-info-act-right"><em><i class="fa fa-plus"></i> Details</em></span>
+                                    </span>
+                                    <img alt="" class="img-responsive" src="~/Content/porto/img/products/product-4.jpg">
+                                </span>
+                            </a>
+                            <span class="product-thumb-info-content">
+                                <a href="shop-product-sidebar.html">
+                                    <h4>Luxury bag</h4>
+                                    <span class="price">
+                                        <span class="amount">$199</span>
+                                    </span>
+                                </a>
+                            </span>
+                        </span>
+                    </li>
+                    <li class="col-md-3 col-sm-6 col-xs-12 product">
+                        <span class="product-thumb-info">
+                            <a href="shop-cart.html" class="add-to-cart-product">
+                                <span><i class="fa fa-shopping-cart"></i> Add to Cart</span>
+                            </a>
+                            <a href="shop-product-sidebar.html">
+                                <span class="product-thumb-info-image">
+                                    <span class="product-thumb-info-act">
+                                        <span class="product-thumb-info-act-left"><em>View</em></span>
+                                        <span class="product-thumb-info-act-right"><em><i class="fa fa-plus"></i> Details</em></span>
+                                    </span>
+                                    <img alt="" class="img-responsive" src="~/Content/porto/img/products/product-5.jpg">
+                                </span>
+                            </a>
+                            <span class="product-thumb-info-content">
+                                <a href="shop-product-sidebar.html">
+                                    <h4>Ladies' handbag</h4>
+                                    <span class="price">
+                                        <span class="amount">$189</span>
+                                    </span>
+                                </a>
+                            </span>
+                        </span>
+                    </li>
+                    <li class="col-md-3 col-sm-6 col-xs-12 product">
+                        <a href="shop-product-sidebar.html">
+                            <span class="onsale">Sale!</span>
+                        </a>
+                        <span class="product-thumb-info">
+                            <a href="shop-cart.html" class="add-to-cart-product">
+                                <span><i class="fa fa-shopping-cart"></i> Add to Cart</span>
+                            </a>
+                            <a href="shop-product-sidebar.html">
+                                <span class="product-thumb-info-image">
+                                    <span class="product-thumb-info-act">
+                                        <span class="product-thumb-info-act-left"><em>View</em></span>
+                                        <span class="product-thumb-info-act-right"><em><i class="fa fa-plus"></i> Details</em></span>
+                                    </span>
+                                    <img alt="" class="img-responsive" src="~/Content/porto/img/products/product-6.jpg">
+                                </span>
+                            </a>
+                            <span class="product-thumb-info-content">
+                                <a href="shop-product-sidebar.html">
+                                    <h4>Baseball Cap</h4>
+                                    <span class="price">
+                                        <del><span class="amount">$25</span></del>
+                                        <ins><span class="amount">$22</span></ins>
+                                    </span>
+                                </a>
+                            </span>
+                        </span>
+                    </li>
+                    <li class="col-md-3 col-sm-6 col-xs-12 product">
+                        <span class="product-thumb-info">
+                            <a href="shop-cart.html" class="add-to-cart-product">
+                                <span><i class="fa fa-shopping-cart"></i> Add to Cart</span>
+                            </a>
+                            <a href="shop-product-sidebar.html">
+                                <span class="product-thumb-info-image">
+                                    <span class="product-thumb-info-act">
+                                        <span class="product-thumb-info-act-left"><em>View</em></span>
+                                        <span class="product-thumb-info-act-right"><em><i class="fa fa-plus"></i> Details</em></span>
+                                    </span>
+                                    <img alt="" class="img-responsive" src="~/Content/porto/img/products/product-7.jpg">
+                                </span>
+                            </a>
+                            <span class="product-thumb-info-content">
+                                <a href="shop-product-sidebar.html">
+                                    <h4>Blue Ladies Handbag</h4>
+                                    <span class="price">
+                                        <span class="amount">$290</span>
+                                    </span>
+                                </a>
+                            </span>
+                        </span>
+                    </li>
+                    <li class="col-md-3 col-sm-6 col-xs-12 product">
+                        <span class="product-thumb-info">
+                            <a href="shop-cart.html" class="add-to-cart-product">
+                                <span><i class="fa fa-shopping-cart"></i> Add to Cart</span>
+                            </a>
+                            <a href="shop-product-sidebar.html">
+                                <span class="product-thumb-info-image">
+                                    <span class="product-thumb-info-act">
+                                        <span class="product-thumb-info-act-left"><em>View</em></span>
+                                        <span class="product-thumb-info-act-right"><em><i class="fa fa-plus"></i> Details</em></span>
+                                    </span>
+                                    <img alt="" class="img-responsive" src="~/Content/porto/img/products/product-8.jpg">
+                                </span>
+                            </a>
+                            <span class="product-thumb-info-content">
+                                <a href="shop-product-sidebar.html">
+                                    <h4>Military Rucksack</h4>
+                                    <span class="price">
+                                        <span class="amount">$49</span>
+                                    </span>
+                                </a>
+                            </span>
+                        </span>
+                    </li>
+                    <li class="col-md-3 col-sm-6 col-xs-12 product">
+                        <a href="shop-product-sidebar.html">
+                            <span class="onsale">Sale!</span>
+                        </a>
+                        <span class="product-thumb-info">
+                            <a href="shop-cart.html" class="add-to-cart-product">
+                                <span><i class="fa fa-shopping-cart"></i> Add to Cart</span>
+                            </a>
+                            <a href="shop-product-sidebar.html">
+                                <span class="product-thumb-info-image">
+                                    <span class="product-thumb-info-act">
+                                        <span class="product-thumb-info-act-left"><em>View</em></span>
+                                        <span class="product-thumb-info-act-right"><em><i class="fa fa-plus"></i> Details</em></span>
+                                    </span>
+                                    <img alt="" class="img-responsive" src="~/Content/porto/img/products/product-9.jpg">
+                                </span>
+                            </a>
+                            <span class="product-thumb-info-content">
+                                <a href="shop-product-sidebar.html">
+                                    <h4>Baseball</h4>
+                                    <span class="price">
+                                        <del><span class="amount">$15</span></del>
+                                        <ins><span class="amount">$12</span></ins>
+                                    </span>
+                                </a>
+                            </span>
+                        </span>
+                    </li>
+                    <li class="col-md-3 col-sm-6 col-xs-12 product">
+                        <span class="product-thumb-info">
+                            <a href="shop-cart.html" class="add-to-cart-product">
+                                <span><i class="fa fa-shopping-cart"></i> Add to Cart</span>
+                            </a>
+                            <a href="shop-product-sidebar.html">
+                                <span class="product-thumb-info-image">
+                                    <span class="product-thumb-info-act">
+                                        <span class="product-thumb-info-act-left"><em>View</em></span>
+                                        <span class="product-thumb-info-act-right"><em><i class="fa fa-plus"></i> Details</em></span>
+                                    </span>
+                                    <img alt="" class="img-responsive" src="~/Content/porto/img/products/product-10.jpg">
+                                </span>
+                            </a>
+                            <span class="product-thumb-info-content">
+                                <a href="shop-product-sidebar.html">
+                                    <h4>Travel bag</h4>
+                                    <span class="price">
+                                        <span class="amount">$78</span>
+                                    </span>
+                                </a>
+                            </span>
+                        </span>
+                    </li>
+                    <li class="col-md-3 col-sm-6 col-xs-12 product">
+                        <span class="product-thumb-info">
+                            <a href="shop-cart.html" class="add-to-cart-product">
+                                <span><i class="fa fa-shopping-cart"></i> Add to Cart</span>
+                            </a>
+                            <a href="shop-product-sidebar.html">
+                                <span class="product-thumb-info-image">
+                                    <span class="product-thumb-info-act">
+                                        <span class="product-thumb-info-act-left"><em>View</em></span>
+                                        <span class="product-thumb-info-act-right"><em><i class="fa fa-plus"></i> Details</em></span>
+                                    </span>
+                                    <img alt="" class="img-responsive" src="~/Content/porto/img/products/product-11.jpg">
+                                </span>
+                            </a>
+                            <span class="product-thumb-info-content">
+                                <a href="shop-product-sidebar.html">
+                                    <h4>Pair of Ice Skates</h4>
+                                    <span class="price">
+                                        <span class="amount">$220</span>
+                                    </span>
+                                </a>
+                            </span>
+                        </span>
+                    </li>
+                    <li class="col-md-3 col-sm-6 col-xs-12 product">
+                        <span class="product-thumb-info">
+                            <a href="shop-cart.html" class="add-to-cart-product">
+                                <span><i class="fa fa-shopping-cart"></i> Add to Cart</span>
+                            </a>
+                            <a href="shop-product-sidebar.html">
+                                <span class="product-thumb-info-image">
+                                    <span class="product-thumb-info-act">
+                                        <span class="product-thumb-info-act-left"><em>View</em></span>
+                                        <span class="product-thumb-info-act-right"><em><i class="fa fa-plus"></i> Details</em></span>
+                                    </span>
+                                    <img alt="" class="img-responsive" src="~/Content/porto/img/products/product-12.jpg">
+                                </span>
+                            </a>
+                            <span class="product-thumb-info-content">
+                                <a href="shop-product-sidebar.html">
+                                    <h4>Sun Glasses</h4>
+                                    <span class="price">
+                                        <span class="amount">$129</span>
+                                    </span>
+                                </a>
+                            </span>
+                        </span>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="pagination pull-right">
+                        <li><a href="#"><i class="fa fa-chevron-left"></i></a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+
