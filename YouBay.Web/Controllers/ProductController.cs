@@ -44,6 +44,12 @@ namespace YouBay.Web.Controllers
             return View(product);
         }
 
+        public ActionResult DetailsForUser(long id)
+        {
+            var product = iProductService.Get(c => c.productId == id);
+            return View(product);
+        }
+
         // GET: Product/Create
         public ActionResult Create()
         {

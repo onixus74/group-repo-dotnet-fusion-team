@@ -3,14 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using YouBay.Service.Services;
 
 namespace YouBay.Web.Controllers
 {
     public class HomeController : Controller
     {
+        IProductService iProductService;
+        public HomeController(IProductService iProductService)
+        {
+            this.iProductService = iProductService;
+        }
         public ActionResult Index()
         {
-            return View();
+            var products = iProductService.getAllCategories();
+            return View(products);
         }
 
         public ActionResult About()
