@@ -13,7 +13,7 @@ namespace YouBay.Web.Models
 
         }
         public int CartId { get; set; }
-        public virtual ApplicationUser ApplicationUser { get; set; }
+        //public virtual ApplicationUser ApplicationUser { get; set; }
 
         //public virtual ICollection<ListCart> ListCarts { get; set; }
 

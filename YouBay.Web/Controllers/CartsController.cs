@@ -19,14 +19,14 @@ namespace YouBay.Web.Controllers
     public class CartsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-        private ApplicationSignInManager _signInManager;
-        private ApplicationUserManager _userManager;
+        //private ApplicationSignInManager _signInManager;
+        //private ApplicationUserManager _userManager;
 
-        public CartsController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
-        {
-            UserManager = userManager;
-            SignInManager = signInManager;
-        }
+        //public CartsController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
+        //{
+        //    UserManager = userManager;
+        //    SignInManager = signInManager;
+        //}
 
         public CartsController()
         {
@@ -39,29 +39,29 @@ namespace YouBay.Web.Controllers
             this.iProductService = iProductService;
         }
 
-        public ApplicationSignInManager SignInManager
-        {
-            get
-            {
-                return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
-            }
-            private set
-            {
-                _signInManager = value;
-            }
-        }
+        //public ApplicationSignInManager SignInManager
+        //{
+        //    get
+        //    {
+        //        return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
+        //    }
+        //    private set
+        //    {
+        //        _signInManager = value;
+        //    }
+        //}
 
-        public ApplicationUserManager UserManager
-        {
-            get
-            {
-                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            }
-            private set
-            {
-                _userManager = value;
-            }
-        }
+        //public ApplicationUserManager UserManager
+        //{
+        //    get
+        //    {
+        //        return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+        //    }
+        //    private set
+        //    {
+        //        _userManager = value;
+        //    }
+        //}
 
         //[AllowAnonymous]
         //public ActionResult Index()
