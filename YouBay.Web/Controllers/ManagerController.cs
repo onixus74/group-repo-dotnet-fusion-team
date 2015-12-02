@@ -1,4 +1,4 @@
-
+﻿
 using System.Web.Mvc;
 using YouBay.Domain.Entities;
 using YouBay.Service.Services;
@@ -25,7 +25,7 @@ namespace YouBay.Web.Controllers
         // GET: Manager/Details/5
         public ActionResult Details(long id)
         {
-            var manager = iManagerService.Get(c => c.youBayUserId== id);
+            var manager = iManagerService.Get(c => c.youBayUserId == id);
             return View(manager);
         }
 
@@ -41,7 +41,7 @@ namespace YouBay.Web.Controllers
         {
             try
             {
-                
+
                 if (ModelState.IsValid)
                 {
                     iManagerService.AddManager(manager);
@@ -101,7 +101,7 @@ namespace YouBay.Web.Controllers
         {
             try
             {
-                iManagerService.Delete(c => c.youBayUserId== id);
+                iManagerService.Delete(c => c.youBayUserId == id);
                 return RedirectToAction("Index");
             }
             catch

@@ -1,4 +1,5 @@
-
+﻿
+using System.Collections.Generic;
 using System.Web.Mvc;
 using YouBay.Domain.Entities;
 using YouBay.Service.Services;
@@ -18,8 +19,22 @@ namespace YouBay.Web.Controllers
         // GET: Product
         public ActionResult Index()
         {
-            var categories = iProductService.getAllCategories();
-            return View(categories);
+            var products = iProductService.getAllCategories();
+            return View(products);
+        }
+
+        [Route("Product/BySubcategory/{theSubcategoryId:long}")]
+        public ActionResult BySubcategory(long theSubcategoryId)
+        {
+            var products = iProductService.GetMany(p => p.subcategory_subcategoryId == theSubcategoryId);
+            return View(products);
+        }
+
+        [Route("Product/BySeller/{theSellerId:long}")]
+        public ActionResult BySeller(long theSellerId)
+        {
+            var products = iProductService.GetMany(p => p.seller.youBayUserId == theSellerId);
+            return View(products);
         }
 
         // GET: Product/Details/5
@@ -32,6 +47,16 @@ namespace YouBay.Web.Controllers
         // GET: Product/Create
         public ActionResult Create()
         {
+            /* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _  */
+            ISubcategoryService iSubcategoryService = new SubcategoryService();
+            List<Subcategory> listSubcategory = iSubcategoryService.getAllCategories();
+            ViewBag.listSubcategory = listSubcategory;
+
+            ISellerService iSellerService = new SellerService();
+            List<Seller> listSellers = iSellerService.getAllCategories();
+            ViewBag.listSellers = listSellers;
+            /* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _  */
+
             return View();
         }
 
@@ -41,7 +66,7 @@ namespace YouBay.Web.Controllers
         {
             try
             {
-                
+
                 if (ModelState.IsValid)
                 {
                     iProductService.AddProduct(product);
@@ -63,6 +88,16 @@ namespace YouBay.Web.Controllers
         // GET: Product/Edit/5
         public ActionResult Edit(long id)
         {
+            /* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _  */
+            ISubcategoryService iSubcategoryService = new SubcategoryService();
+            List<Subcategory> listSubcategory = iSubcategoryService.getAllCategories();
+            ViewBag.listSubcategory = listSubcategory;
+
+            ISellerService iSellerService = new SellerService();
+            List<Seller> listSellers = iSellerService.getAllCategories();
+            ViewBag.listSellers = listSellers;
+            /* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _  */
+
             Product product = iProductService.Get(c => c.productId == id);
             return View(product);
         }

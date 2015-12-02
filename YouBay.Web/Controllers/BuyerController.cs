@@ -1,4 +1,4 @@
-
+﻿
 using System.Web.Mvc;
 using YouBay.Domain.Entities;
 using YouBay.Service.Services;
@@ -25,7 +25,7 @@ namespace YouBay.Web.Controllers
         // GET: Buyer/Details/5
         public ActionResult Details(long id)
         {
-            var buyer = iBuyerService.Get(c => c.youBayUserId== id);
+            var buyer = iBuyerService.Get(c => c.youBayUserId == id);
             return View(buyer);
         }
 
@@ -41,7 +41,7 @@ namespace YouBay.Web.Controllers
         {
             try
             {
-                
+
                 if (ModelState.IsValid)
                 {
                     iBuyerService.AddBuyer(buyer);
@@ -63,7 +63,7 @@ namespace YouBay.Web.Controllers
         // GET: Buyer/Edit/5
         public ActionResult Edit(long id)
         {
-            Buyer buyer = iBuyerService.Get(c => c.youBayUserId== id);
+            Buyer buyer = iBuyerService.Get(c => c.youBayUserId == id);
             return View(buyer);
         }
 
@@ -101,7 +101,7 @@ namespace YouBay.Web.Controllers
         {
             try
             {
-                iBuyerService.Delete(c => c.youBayUserId== id);
+                iBuyerService.Delete(c => c.youBayUserId == id);
                 return RedirectToAction("Index");
             }
             catch
