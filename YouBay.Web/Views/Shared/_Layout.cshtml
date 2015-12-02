@@ -4,41 +4,154 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
+    @*@Styles.Render("~/Content/css")*@
+    @Styles.Render("~/Scripts/vendor/bootstrap/css/bootstrap.css")
+    @Styles.Render("~/Scripts/vendor/font-awesome/css/font-awesome.css")
+    @Styles.Render("~/Scripts/vendor/simple-line-icons/css/simple-line-icons.css")
+    @Styles.Render("~/Scripts/vendor/owl.carousel/assets/owl.carousel.min.css")
+    @Styles.Render("~/Scripts/vendor/owl.carousel/assets/owl.theme.default.min.css")
+    @Styles.Render("~/Scripts/vendor/magnific-popup/magnific-popup.css")
+
+    @Styles.Render("~/Content/css/theme.css")
+    @Styles.Render("~/Content/css/theme-elements.css")
+    @Styles.Render("~/Content/css/theme-blog.css")
+    @Styles.Render("~/Content/css/theme-shop.css")
+    @Styles.Render("~/Content/css/theme-animate.css")
+
+    @Styles.Render("~/Content/css/skins/default.css")
+    @Styles.Render("~/Content/css/custom.css")
+
+
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    <div class="body">
+        @*<div class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("About", "About", "Home")</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        </ul>
+                        @Html.Partial("_LoginPartial")
+                    </div>
+                </div>
+            </div>*@
+
+
+
+        <header id="header" data-plugin-options='{"stickyEnabled": true, "stickyEnableOnBoxed": true, "stickyEnableOnMobile": true, "stickyStartAt": 57, "stickySetTop": "-57px", "stickyChangeLogo": true}'>
+            <div class="header-body">
+                <div class="header-container container">
+                    <div class="header-row">
+                        <div class="header-column">
+                            <div class="header-logo">
+                                <a href="index.html">
+                                    <img alt="Porto" width="111" height="54" data-sticky-width="82" data-sticky-height="40" data-sticky-top="33" src="~/Content/img/logo.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="header-column">
+                            <div class="header-row">
+                                <div class="header-search hidden-xs">
+                                    <form id="searchForm" action="page-search-results.html" method="get">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name="q" id="q" placeholder="Search..." required>
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+                                            </span>
+                                        </div>
+                                    </form>
+                                </div>
+                                <nav class="header-nav-top">
+
+                                    @Html.Partial("_LoginPartial")
+
+                                </nav>
+                            </div>
+                            <div class="header-row">
+                                <div class="header-nav">
+                                    <button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main">
+                                        <i class="fa fa-bars"></i>
+                                    </button>
+                                    <ul class="header-social-icons social-icons hidden-xs">
+                                        <li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                                        <li class="social-icons-twitter"><a href="http://www.twitter.com/" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                                        <li class="social-icons-linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                                    </ul>
+                                    <div class="header-nav-main header-nav-main-effect-1 header-nav-main-sub-effect-1 collapse">
+                                        <nav>
+                                            <ul class="nav nav-pills" id="mainNav">
+                                                <li class="dropdown">@Html.ActionLink("Home", "Index", "Home")</li>
+                                                <li class="dropdown">@Html.ActionLink("About", "About", "Home")</li>
+                                                <li class="dropdown">@Html.ActionLink("Contact", "Contact", "Home")</li>
+
+                                                <li class="dropdown">
+                                                    <a href="#">
+                                                        About Us
+                                                    </a>
+
+                                                </li>
+                                                <li class="dropdown">
+                                                    <a href="#">
+                                                        Contact Us
+                                                    </a>
+
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
+        </header>
+
+
+
+        <div  role="main" class="main">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+        @Scripts.Render("~/bundles/vendor/jquery/jquery.js")
+        @Scripts.Render("~/bundles/vendor/jquery.appear/jquery.appear.js")
+        @Scripts.Render("~/bundles/vendor/jquery.easing/jquery.easing.js")
+        @Scripts.Render("~/bundles/vendor/jquery-cookie/jquery-cookie.js")
+        @Scripts.Render("~/bundles/vendor/bootstrap/js/bootstrap.js")
+        @Scripts.Render("~/bundles/vendor/common/common.js")
+        @Scripts.Render("~/bundles/vendor/jquery.validation/jquery.validation.js")
+        @Scripts.Render("~/bundles/vendor/jquery.stellar/jquery.stellar.js")
+        @Scripts.Render("~/bundles/vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.js")
+        @Scripts.Render("~/bundles/vendor/jquery.gmap/jquery.gmap.js")
+        @Scripts.Render("~/bundles/vendor/jquery.lazyload/jquery.lazyload.js")
+        @Scripts.Render("~/bundles/vendor/isotope/jquery.isotope.js")
+        @Scripts.Render("~/bundles/vendor/owl.carousel/owl.carousel.js")
+        @Scripts.Render("~/bundles/vendor/magnific-popup/jquery.magnific-popup.js")
+        @Scripts.Render("~/bundles/vendor/vide/vide.js")
+        @Scripts.Render("~/bundles/js/theme.js")
+        @Scripts.Render("~/bundles/js/custom.js")
+        @Scripts.Render("~/bundles/js/theme.init.js")
+
+
+        @RenderSection("scripts", required: false)
 </body>
 </html>
