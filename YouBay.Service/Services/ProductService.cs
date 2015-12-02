@@ -33,7 +33,7 @@ namespace YouBay.Service.Services
 
         public Product Get(Expression<Func<Product, bool>> where)
         {
-            return unitofwork.ProductRepository.Get(where);
+            return unitofwork.ProductRepository.Get(where); /* ATTENTION ! */
         }
 
         public List<Product> getAllCategories()

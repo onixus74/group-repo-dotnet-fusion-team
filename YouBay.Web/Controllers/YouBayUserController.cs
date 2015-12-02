@@ -1,5 +1,4 @@
-
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using YouBay.Domain.Entities;
 using YouBay.Service.Services;
 
@@ -41,7 +40,7 @@ namespace YouBay.Web.Controllers
         {
             try
             {
-                
+
                 if (ModelState.IsValid)
                 {
                     iYouBayUserService.AddYouBayUser(youBayUser);
