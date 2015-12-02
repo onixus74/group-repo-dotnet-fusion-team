@@ -14,6 +14,12 @@ namespace YouBay.Web.Controllers
             this.iSellerService = iSellerService;
         }
 
+        IProductService iProductService;
+        public SellerController(IProductService iProductService)
+        {
+            this.iProductService = iProductService;
+        }
+
 
         // GET: Seller
         public ActionResult Index()

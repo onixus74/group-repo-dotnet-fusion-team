@@ -1,0 +1,120 @@
+﻿@model YouBay.Domain.Entities.Product
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Product</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.LabelFor(model => model.productName, "Product Name : ")
+            </div>
+            
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.productName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.productName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10">
+               
+                @Html.LabelFor(model => model.productDescription, "Product Description")
+            </div>
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.productDescription, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.productDescription, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.LabelFor(model => model.productDescription, "Available Quantity")
+                </div>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.quantityAvailable, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.quantityAvailable, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+        <div class="form-group">
+            <div class="col-md-10">
+
+            @Html.LabelFor(model => model.sellerPrice, "Price")
+
+            </div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.sellerPrice, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.sellerPrice, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-10">
+
+            @Html.LabelFor(model => model.productImage, "Product Image")
+
+            </div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.productImage, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.productImage, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <div class="col-md-10">
+
+
+            </div>
+            @Html.LabelFor(model => model.subcategory_subcategoryId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <!-- _ _ _  _ _ _  _ _ _ _ _ _ _ _ _ _ _ _ _  _ _ _ _  _ _ -->
+                <select id="subcategory_subcategoryId" name="subcategory_subcategoryId">
+                    @foreach (var subcategory in ViewBag.listSubcategory)
+                {
+                        <option value="@subcategory.subcategoryId">
+                            @subcategory.categoryName
+                        </option>
+                    }
+                </select>
+                <!-- _ _ _  _ _ _  _ _ _ _ _ _ _ _ _ _ _ _ _  _ _ _ _  _ _ -->
+                @Html.ValidationMessageFor(model => model.subcategory_subcategoryId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
