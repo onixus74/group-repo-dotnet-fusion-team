@@ -221,7 +221,7 @@
     <Compile Include="Controllers\ManagerController.cs" />
     <Compile Include="Controllers\OrderAndReviewController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
-    <Compile Include="Controllers\ProducthistoryController.cs" />
+    <Compile Include="Controllers\ProductHistoryController.cs" />
     <Compile Include="Controllers\SellerController.cs" />
     <Compile Include="Controllers\SpecialPromotionController.cs" />
     <Compile Include="Controllers\SubcategoryController.cs" />
