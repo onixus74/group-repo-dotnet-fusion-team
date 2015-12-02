@@ -22,7 +22,11 @@ namespace YouBay.Web.Controllers
             var products = iProductService.getAllCategories();
             return View(products);
         }
-
+        public ActionResult SellerIndex()
+        {
+            var products = iProductService.getAllCategories();
+            return View(products);
+        }
         [Route("Product/BySubcategory/{theSubcategoryId:long}")]
         public ActionResult BySubcategory(long theSubcategoryId)
         {
@@ -66,6 +70,21 @@ namespace YouBay.Web.Controllers
             return View();
         }
 
+        public ActionResult SellerCreate()
+        {
+            /* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _  */
+            ISubcategoryService iSubcategoryService = new SubcategoryService();
+            List<Subcategory> listSubcategory = iSubcategoryService.getAllCategories();
+            ViewBag.listSubcategory = listSubcategory;
+
+            ISellerService iSellerService = new SellerService();
+            List<Seller> listSellers = iSellerService.getAllCategories();
+            ViewBag.listSellers = listSellers;
+            /* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _  */
+
+            return View();
+        }
+
         // POST: Product/Create
         [HttpPost]
         public ActionResult Create(Product product)
@@ -77,6 +96,31 @@ namespace YouBay.Web.Controllers
                 {
                     iProductService.AddProduct(product);
                     return RedirectToAction("Index");
+                }
+
+                else
+                {
+                    return View();
+                }
+
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        // POST: Product/Create
+        [HttpPost]
+        public ActionResult SellerCreate(Product product)
+        {
+            try
+            {
+
+                if (ModelState.IsValid)
+                {
+                    iProductService.AddProduct(product);
+                    return RedirectToAction("SellerIndex");
                 }
 
                 else

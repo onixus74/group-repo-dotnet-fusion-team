@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html @*class="dark"*@>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -108,6 +108,15 @@
                                                     </a>
 
                                                 </li>
+                                                <li class="dropdown">
+                                                    <a class="dropdown-toggle" href="/Product">
+                                                        Product
+                                                    </a>
+                                                    <ul class="dropdown-menu">
+                                                        <li>@Html.ActionLink("Create", "SellerCreate", "Product")</li>
+                                                        <li>@Html.ActionLink("Product List", "SellerIndex", "Product")</li>
+                                                    </ul>
+                                                </li>
                                             </ul>
                                         </nav>
                                     </div>
@@ -125,7 +134,7 @@
             @RenderBody()
             <hr />
             <footer>
-                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+                <p>&copy; @DateTime.Now.Year - Youbay</p>
             </footer>
         </div>
     </div>
