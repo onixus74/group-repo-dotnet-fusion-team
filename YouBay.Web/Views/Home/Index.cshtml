@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<YouBay.Domain.Entities.Product>
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -392,30 +393,34 @@
                             </span>
                         </span>
                     </li>
-                    <li class="col-md-3 col-sm-6 col-xs-12 product">
-                        <span class="product-thumb-info">
-                            <a href="shop-cart.html" class="add-to-cart-product">
-                                <span><i class="fa fa-shopping-cart"></i> Add to Cart</span>
-                            </a>
-                            <a href="shop-product-sidebar.html">
-                                <span class="product-thumb-info-image">
-                                    <span class="product-thumb-info-act">
-                                        <span class="product-thumb-info-act-left"><em>View</em></span>
-                                        <span class="product-thumb-info-act-right"><em><i class="fa fa-plus"></i> Details</em></span>
-                                    </span>
-                                    <img alt="" class="img-responsive" src="~/Content/porto/img/products/product-12.jpg">
-                                </span>
-                            </a>
-                            <span class="product-thumb-info-content">
-                                <a href="shop-product-sidebar.html">
-                                    <h4>Sun Glasses</h4>
-                                    <span class="price">
-                                        <span class="amount">$129</span>
+                    
+                    @foreach (var Product in Model)
+                    {
+                        <li class="col-md-3 col-sm-6 col-xs-12 product">
+                            <span class="product-thumb-info">
+                                <a href="shop-cart.html" class="add-to-cart-product">
+                                    <span><i class="fa fa-shopping-cart"></i> @Html.ActionLink("Add to Cart »", "AddProduct", "Carts", new { id = @Product.productId }, "")</span>
+                                </a>
+                                <a href="/Product/DetailsForUser/@Product.productId">
+                                    <span class="product-thumb-info-image">
+                                        <span class="product-thumb-info-act">
+                                            <span class="product-thumb-info-act-left"><em>View</em></span>
+                                            <span class="product-thumb-info-act-right"><em><i class="fa fa-plus"></i> Details</em></span>
+                                        </span>
+                                        <img alt="" class="img-responsive" src="@Product.productImage">
                                     </span>
                                 </a>
+                                <span class="product-thumb-info-content">
+                                    <a href="shop-product-sidebar.html">
+                                        <h4>@Product.productName</h4>
+                                        <span class="price">
+                                            <span class="amount">@Product.sellerPrice</span>
+                                        </span>
+                                    </a>
+                                </span>
                             </span>
-                        </span>
-                    </li>
+                        </li>
+                    }
                 </ul>
 
             </div>

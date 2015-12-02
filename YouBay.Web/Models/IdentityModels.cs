@@ -29,5 +29,7 @@ namespace YouBay.Web.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<YouBay.Web.Models.Cart> Carts { get; set; }
     }
 }
