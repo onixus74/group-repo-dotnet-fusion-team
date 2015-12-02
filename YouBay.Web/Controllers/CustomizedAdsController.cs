@@ -1,32 +1,23 @@
-
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 using System.Web.Mvc;
-using YouBay.Domain.Entities;
-using YouBay.Service.Services;
 
 namespace YouBay.Web.Controllers
 {
     public class CustomizedAdsController : Controller
     {
-
-        ICustomizedAdsService iCustomizedAdsService;
-        public CustomizedAdsController(ICustomizedAdsService iCustomizedAdsService)
-        {
-            this.iCustomizedAdsService = iCustomizedAdsService;
-        }
-
-
         // GET: CustomizedAds
         public ActionResult Index()
         {
-            var categories = iCustomizedAdsService.getAllCategories();
-            return View(categories);
+            return View();
         }
 
         // GET: CustomizedAds/Details/5
-        public ActionResult Details(long id)
+        public ActionResult Details(int id)
         {
-            var customizedAds = iCustomizedAdsService.Get(c => c.customizedAdsId == id);
-            return View(customizedAds);
+            return View();
         }
 
         // GET: CustomizedAds/Create
@@ -37,22 +28,13 @@ namespace YouBay.Web.Controllers
 
         // POST: CustomizedAds/Create
         [HttpPost]
-        public ActionResult Create(CustomizedAds customizedAds)
+        public ActionResult Create(FormCollection collection)
         {
             try
             {
-                
-                if (ModelState.IsValid)
-                {
-                    iCustomizedAdsService.AddCustomizedAds(customizedAds);
-                    return RedirectToAction("Index");
-                }
+                // TODO: Add insert logic here
 
-                else
-                {
-                    return View();
-                }
-
+                return RedirectToAction("Index");
             }
             catch
             {
@@ -61,47 +43,41 @@ namespace YouBay.Web.Controllers
         }
 
         // GET: CustomizedAds/Edit/5
-        public ActionResult Edit(long id)
+        public ActionResult Edit(int id)
         {
-            CustomizedAds customizedAds = iCustomizedAdsService.Get(c => c.customizedAdsId == id);
-            return View(customizedAds);
+            return View();
         }
 
         // POST: CustomizedAds/Edit/5
         [HttpPost]
-        public ActionResult Edit(CustomizedAds customizedAds)
+        public ActionResult Edit(int id, FormCollection collection)
         {
             try
             {
+                // TODO: Add update logic here
 
-                if (ModelState.IsValid)
-                {
-                    iCustomizedAdsService.UpdateCustomizedAds(customizedAds);
-                    return RedirectToAction("Index");
-                }
-
+                return RedirectToAction("Index");
             }
             catch
             {
                 return View();
             }
-
-            return View();
         }
 
         // GET: CustomizedAds/Delete/5
-        public ActionResult Delete(long id)
+        public ActionResult Delete(int id)
         {
             return View();
         }
 
         // POST: CustomizedAds/Delete/5
         [HttpPost]
-        public ActionResult Delete(long id, FormCollection collection)
+        public ActionResult Delete(int id, FormCollection collection)
         {
             try
             {
-                iCustomizedAdsService.Delete(c => c.customizedAdsId == id);
+                // TODO: Add delete logic here
+
                 return RedirectToAction("Index");
             }
             catch

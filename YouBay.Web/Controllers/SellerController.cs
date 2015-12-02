@@ -1,4 +1,4 @@
-
+﻿
 using System.Web.Mvc;
 using YouBay.Domain.Entities;
 using YouBay.Service.Services;
@@ -41,7 +41,7 @@ namespace YouBay.Web.Controllers
         {
             try
             {
-                
+
                 if (ModelState.IsValid)
                 {
                     iSellerService.AddSeller(seller);
@@ -63,7 +63,7 @@ namespace YouBay.Web.Controllers
         // GET: Seller/Edit/5
         public ActionResult Edit(long id)
         {
-            Seller seller = iSellerService.Get(c => c.youBayUserId== id);
+            Seller seller = iSellerService.Get(c => c.youBayUserId == id);
             return View(seller);
         }
 
