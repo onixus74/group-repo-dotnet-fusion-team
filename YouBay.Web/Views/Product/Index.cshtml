@@ -9,37 +9,47 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table table-striped table-hover">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.isDisabledByAdmin)
+            @*@Html.Label("Disabled Admin")*@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.isDisabledBySeller)
+            @*@Html.Label("Disabled Seller")*@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.productDescription)
+            @*@Html.Label("Description")*@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.productImage)
+            @*@Html.Label("Image")*@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.productName)
+            @*@Html.Label("Name")*@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.quantityAvailable)
+            @*@Html.Label("Quantity")*@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.sellerPrice)
+            @*@Html.Label("Price")*@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.subcategoryAttributesAndValues)
+            @*@Html.Label("Values")*@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.seller_youBayUserId)
+            @*@Html.Label("Seller")*@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.subcategory_subcategoryId)
+            @*@Html.Label("Category")*@
         </th>
         <th></th>
     </tr>
@@ -56,7 +66,7 @@
             @Html.DisplayFor(modelItem => item.productDescription)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.productImage)
+            <img alt="" class="img-responsive" src="@Html.DisplayFor(modelItem => item.productImage)">
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.productName)
